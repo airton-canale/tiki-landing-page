@@ -6,7 +6,7 @@ const SpoilersCard = () => {
     <>
       <div className="w-full flex items-center justify-center">
         <div className="w-[80vw] bg-[#26093A] relative rounded-[80px] px-20 py-10 flex flex-col gap-5 text-white">
-          <div className="flex items-center flex-col gap-5">
+          <div className="flex items-center flex-col gap-24">
             <h1
               className="text-[#26093A] text-bold text-4xl"
               style={{

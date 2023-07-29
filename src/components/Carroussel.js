@@ -40,21 +40,27 @@ const Carroussel = forwardRef((props, ref) => {
   const imagesCarroussel = [
     {
       url: '/assets/Florianopolis.jpg?a=1',
+      date: '16 DE MARÇO',
     },
     {
       url: '/assets/Florianopolis.jpg?a=2',
+      date: '17 DE MARÇO',
     },
     {
       url: '/assets/Florianopolis.jpg?a=3',
+      date: '18 DE MARÇO',
     },
     {
       locked: true,
+      date: '21 DE MARÇO',
     },
     {
       locked: true,
+      date: '23 DE MARÇO',
     },
     {
       locked: true,
+      date: '25 DE MARÇO',
     },
   ]
   const [sliderRef, instanceRef] = useKeenSlider({
@@ -104,30 +110,37 @@ const Carroussel = forwardRef((props, ref) => {
             return (
               <>
                 {!img.locked ? (
-                  <div
-                    className={[
-                      'keen-slider__slide rounded-2xl m-2 cursor-pointer',
-                      activeSlide === i && 'shadow-[0_0_0_5px_white]',
-                    ]
-                      .filter(Boolean)
-                      .join(' ')}
-                  >
-                    <img
-                      onClick={() => instanceRef.current.moveToIdx(i)}
-                      src={img.url}
-                      alt="a"
-                    />
+                  <div className="keen-slider__slide flex flex-col items-center justify-center gap-1">
+                    <div
+                      className={[
+                        'rounded-2xl m-2 cursor-pointer',
+                        activeSlide === i && 'shadow-[0_0_0_5px_white]',
+                      ]
+                        .filter(Boolean)
+                        .join(' ')}
+                    >
+                      <img
+                        onClick={() => instanceRef.current.moveToIdx(i)}
+                        src={img.url}
+                        className="rounded-2xl"
+                        alt="a"
+                      />
+                    </div>
+                    <p className="text-white">{img.date}</p>
                   </div>
                 ) : (
-                  <div
-                    className={[
-                      'keen-slider__slide bg-[#280031] flex items-center justify-center rounded-2xl m-2 cursor-pointer',
-                      activeSlide === i && 'shadow-[0_0_0_5px_white]',
-                    ]
-                      .filter(Boolean)
-                      .join(' ')}
-                  >
-                    <img className="w-10" src="/assets/Cadeado.png" alt="" />
+                  <div className='keen-slider__slide flex flex-col items-center justify-center gap-1 px-2'>
+                    <div
+                      className={[
+                        'bg-[#280031] flex-grow w-full flex items-center justify-center rounded-2xl m-2 cursor-pointer',
+                        activeSlide === i && 'shadow-[0_0_0_5px_white]',
+                      ]
+                        .filter(Boolean)
+                        .join(' ')}
+                    >
+                      <img className="w-10" src="/assets/Cadeado.png" alt="" />
+                    </div>
+                    <p className="text-white">{img.date}</p>
                   </div>
                 )}
               </>
