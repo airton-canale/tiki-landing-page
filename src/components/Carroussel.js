@@ -148,13 +148,13 @@ const Carroussel = forwardRef((props, ref) => {
         </div>
         <div
           onClick={() => instanceRef.current.prev()}
-          className="w-10 absolute bottom-[5rem] -left-14 bg-black rounded-full p-3 cursor-pointer"
+          className="w-10 absolute bottom-[7rem] -left-14 bg-black rounded-full p-3 cursor-pointer"
         >
           <img src="/assets/ArrowLeft.png" alt=""></img>
         </div>
         <div
           onClick={() => instanceRef.current.next()}
-          className="w-10 absolute bottom-[5rem] -right-14 bg-black rounded-full p-3 cursor-pointer"
+          className="w-10 absolute bottom-[7rem] -right-14 bg-black rounded-full p-3 cursor-pointer"
         >
           <img src="/assets/ArrowRight.png" alt=""></img>
         </div>
