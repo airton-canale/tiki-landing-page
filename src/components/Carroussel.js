@@ -98,14 +98,17 @@ const Carroussel = forwardRef((props, ref) => {
                 alt=""
               />
             ) : (
-              <div className="keen-slider__slide bg-[#280031] flex items-center justify-center rounded-2xl cursor-pointer">
+              <div className="keen-slider__slide bg-[#280031] flex flex-col items-center justify-center rounded-2xl cursor-pointer">
                 <img className="w-10" src="/assets/Cadeado.png" alt="" />
+                <p className='text-2xl bold mt-2'>EM BREVE</p>
               </div>
             )
           })}
         </div>
-
-        <div ref={thumbnailRef} className="keen-slider thumbnail my-6">
+        <p className="text-center mt-10 mb-2 font-bold text-xl">
+          CONFIRA O QUE JÁ SAIU E O QUE ESTÁ POR VIR!
+        </p>
+        <div ref={thumbnailRef} className="keen-slider thumbnail mb-6">
           {imagesCarroussel.map((img, i) => {
             return (
               <>
@@ -126,10 +129,18 @@ const Carroussel = forwardRef((props, ref) => {
                         alt="a"
                       />
                     </div>
-                    <p className="text-white">{img.date}</p>
+                    <p
+                      className={
+                        activeSlide !== i
+                          ? 'text-[#FC2BEE] font-bold'
+                          : 'text-white font-bold'
+                      }
+                    >
+                      {img.date}
+                    </p>
                   </div>
                 ) : (
-                  <div className='keen-slider__slide flex flex-col items-center justify-center gap-1 px-2'>
+                  <div className="keen-slider__slide flex flex-col items-center justify-center gap-1 px-2">
                     <div
                       className={[
                         'bg-[#280031] flex-grow w-full flex items-center justify-center rounded-2xl m-2 cursor-pointer',
@@ -140,7 +151,15 @@ const Carroussel = forwardRef((props, ref) => {
                     >
                       <img className="w-10" src="/assets/Cadeado.png" alt="" />
                     </div>
-                    <p className="text-white">{img.date}</p>
+                    <p
+                      className={
+                        activeSlide !== i
+                          ? 'text-[#FC2BEE] font-bold'
+                          : 'text-white font-bold'
+                      }
+                    >
+                      {img.date}
+                    </p>
                   </div>
                 )}
               </>
@@ -161,15 +180,15 @@ const Carroussel = forwardRef((props, ref) => {
         </div>
         <div
           onClick={() => instanceRef.current.prev()}
-          className="w-10 absolute bottom-[7rem] -left-14 bg-black rounded-full p-3 cursor-pointer"
+          className="w-10 absolute bottom-[7rem] -left-14 bg-white rounded-full p-3 cursor-pointer"
         >
-          <img src="/assets/ArrowLeft.png" alt=""></img>
+          <img className="invert" src="/assets/ArrowLeft.png" alt=""></img>
         </div>
         <div
           onClick={() => instanceRef.current.next()}
-          className="w-10 absolute bottom-[7rem] -right-14 bg-black rounded-full p-3 cursor-pointer"
+          className="w-10 absolute bottom-[7rem] -right-14 bg-white rounded-full p-3 cursor-pointer"
         >
-          <img src="/assets/ArrowRight.png" alt=""></img>
+          <img className="invert" src="/assets/ArrowRight.png" alt=""></img>
         </div>
       </div>
     </>
