@@ -7,13 +7,18 @@ const FormCard = () => {
     name: '',
     email: '',
   })
+  const [checked, setChecked] = useState(false)
 
-  const handleChange = ({target: {name, value}}) => {
+  const handleChange = ({ target: { name, value } }) => {
     setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }))
   }
+
+  const handleCheck = () => {
+    setChecked((prevChecked) => !prevChecked);
+  };
   console.log(formData)
 
   return (
@@ -23,24 +28,26 @@ const FormCard = () => {
           CADASTRE-SE E FIQUE POR DENTRO DAS NOVIDADES
         </p>
         <input
-        onChange={handleChange}
+          onChange={handleChange}
           name="name"
           className="p-4 rounded-3xl bg-[#26093A] border border-white text-sm outline-none focus:border-[#FC2BEE] focus:text-[#FC2BEE] focus:placeholder:text-[#FC2BEE]"
           type={'text'}
           placeholder={'Nome'}
         />
         <input
-        onChange={handleChange}
+          onChange={handleChange}
           name="email"
           className="p-4 rounded-3xl bg-[#26093A] border border-white text-sm outline-none focus:border-[#FC2BEE] focus:text-[#FC2BEE] focus:placeholder:text-[#FC2BEE]"
           type={'email'}
           placeholder={'meuemail@gmail.com'}
         />
         <label className="w-full text-xs flex items-center gap-1">
-          <RadioInput checked={true} /> Declaro que li e aceito a politica de
-          privacidade
+          <RadioInput onClick={handleCheck} checked={checked} /> Declaro que li
+          e aceito a politica de privacidade
         </label>
-        <button className='bg-white rounded-3xl text-black text-xl font-bold p-3 w-full uppercase button-shadow'>Enviar</button>
+        <button className="bg-white rounded-3xl text-black text-xl font-bold p-3 w-full uppercase button-shadow">
+          Enviar
+        </button>
       </Card>
     </div>
   )

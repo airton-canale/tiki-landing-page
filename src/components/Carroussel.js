@@ -180,13 +180,13 @@ const Carroussel = forwardRef((props, ref) => {
         </div>
         <div
           onClick={() => instanceRef.current.prev()}
-          className="w-10 h-10 absolute bottom-[6rem] -left-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
+          className="w-10 h-10 absolute bottom-[7rem] -left-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
         >
           <img className="invert w-4 mr-1" src="/assets/ArrowLeft.png" alt=""></img>
         </div>
         <div
           onClick={() => instanceRef.current.next()}
-          className="w-10 h-10 absolute bottom-[6rem] -right-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
+          className="w-10 h-10 absolute bottom-[7rem] -right-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
         >
           <img className="invert w-4 ml-1" src="/assets/ArrowRight.png" alt=""></img>
         </div>
