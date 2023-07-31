@@ -1,6 +1,6 @@
 import Card from './Card'
 import Carroussel from './Carroussel'
-import CrossTransition from './CrossTransition'
+import PlusTransition from './PlusTransition'
 
 const SpoilersCard = () => {
   return (
@@ -17,7 +17,7 @@ const SpoilersCard = () => {
               >
                 CUIDADO, AO ROLAR PODE CONTER...
               </h1>
-              <CrossTransition />
+              <PlusTransition />
               <img className='w-3/4 mb-14' src="/assets/tittle1.svg" alt="spoilers" />
               <img
                 className="w-8 my-10"

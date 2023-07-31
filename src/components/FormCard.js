@@ -3,7 +3,7 @@ import Card from './Card'
 import RadioInput from './RadioInput'
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import CrossTransition from './CrossTransition'
+import PlusTransition from './PlusTransition'
 
 const FormCard = () => {
   const [formData, setFormData] = useState({
@@ -84,7 +84,7 @@ const FormCard = () => {
             'bg-white rounded-3xl flex justify-center text-black text-xl font-bold p-3 w-full uppercase button-shadow disabled:bg-slate-400 disabled:shadow-none'
           }
         >
-          {!isLoading ? 'Enviar' : <CrossTransition horizontal />}
+          {!isLoading ? 'Enviar' : <PlusTransition horizontal />}
         </button>
       </Card>
     </div>

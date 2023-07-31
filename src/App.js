@@ -1,7 +1,7 @@
 import { ToastContainer } from 'react-toastify'
 import Background from './components/Background'
 import CompanyLogo from './components/CompanyLogo'
-import CrossTransition from './components/CrossTransition'
+import PlusTransition from './components/PlusTransition'
 import FooterText from './components/FooterText'
 import FormCard from './components/FormCard'
 import SpoilersCard from './components/SpoilerCard'
@@ -18,7 +18,7 @@ function App() {
           src="/assets/tittle2.svg"
           alt="Quero fazer parte"
         />
-        <CrossTransition />
+        <PlusTransition />
       </div>
       <FormCard />
       <ToastContainer />
