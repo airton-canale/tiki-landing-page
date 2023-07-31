@@ -9,7 +9,7 @@ const PlusSign = ({ idx }) => {
   )
 }
 
-const CrossTransition = ({horizontal = false}) => {
+const PlusTransition = ({horizontal = false}) => {
   return (
     <div>
       <div className={["flex gap-0", horizontal ? "flex-row" : "flex-col"].filter(Boolean).join(' ')}>
@@ -21,4 +21,4 @@ const CrossTransition = ({horizontal = false}) => {
   )
 }
 
-export default CrossTransition
+export default PlusTransition

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, forwardRef } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
+import Arrow from './Arrow'
 
 function ThumbnailPlugin(mainRef) {
   return (slider) => {
@@ -184,26 +185,8 @@ const Carroussel = forwardRef((props, ref) => {
             />
           ))}
         </div>
-        <div
-          onClick={() => instanceRef.current.prev()}
-          className="w-10 h-10 absolute bottom-[7rem] -left-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
-        >
-          <img
-            className="invert w-4 mr-1"
-            src="/assets/arrow-left.svg"
-            alt="arrow left"
-          ></img>
-        </div>
-        <div
-          onClick={() => instanceRef.current.next()}
-          className="w-10 h-10 absolute bottom-[7rem] -right-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
-        >
-          <img
-            className="invert w-4 ml-1"
-            src="/assets/arrow-right.svg"
-            alt="arrow left"
-          ></img>
-        </div>
+        <Arrow onClick={() => instanceRef.current.next()} direction="right" />
+        <Arrow onClick={() => instanceRef.current.prev()} direction="left" />
       </div>
     </>
   )
