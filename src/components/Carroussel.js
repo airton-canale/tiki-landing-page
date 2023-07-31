@@ -1,7 +1,6 @@
 import React, { useEffect, useState, forwardRef } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
-// import "./projects.css";
 
 function ThumbnailPlugin(mainRef) {
   return (slider) => {
@@ -39,15 +38,15 @@ function ThumbnailPlugin(mainRef) {
 const Carroussel = forwardRef((props, ref) => {
   const imagesCarroussel = [
     {
-      url: '/assets/Florianopolis.jpg?a=1',
+      url: '/assets/imagem.jpg?a=1',
       date: '16 DE MARÇO',
     },
     {
-      url: '/assets/Florianopolis.jpg?a=2',
+      url: '/assets/imagem.jpg?a=2',
       date: '17 DE MARÇO',
     },
     {
-      url: '/assets/Florianopolis.jpg?a=3',
+      url: '/assets/imagem.jpg?a=3',
       date: '18 DE MARÇO',
     },
     {
@@ -95,11 +94,11 @@ const Carroussel = forwardRef((props, ref) => {
               <img
                 className="keen-slider__slide rounded-2xl cursor-pointer"
                 src={img.url}
-                alt=""
+                alt="Florianopolis"
               />
             ) : (
               <div className="keen-slider__slide bg-[#280031] flex flex-col items-center justify-center rounded-2xl cursor-pointer">
-                <img className="w-10" src="/assets/Cadeado.png" alt="" />
+                <img className="w-10" src="/assets/lock.svg" alt="lock" />
                 <p className='text-2xl bold mt-2'>EM BREVE</p>
               </div>
             )
@@ -126,7 +125,7 @@ const Carroussel = forwardRef((props, ref) => {
                         onClick={() => instanceRef.current.moveToIdx(i)}
                         src={img.url}
                         className="rounded-2xl"
-                        alt="a"
+                        alt="Florianopolis"
                       />
                     </div>
                     <p
@@ -149,7 +148,7 @@ const Carroussel = forwardRef((props, ref) => {
                         .filter(Boolean)
                         .join(' ')}
                     >
-                      <img className="w-10" src="/assets/Cadeado.png" alt="" />
+                      <img className="w-10" src="/assets/lock.svg" alt="lock" />
                     </div>
                     <p
                       className={
@@ -182,13 +181,13 @@ const Carroussel = forwardRef((props, ref) => {
           onClick={() => instanceRef.current.prev()}
           className="w-10 h-10 absolute bottom-[7rem] -left-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
         >
-          <img className="invert w-4 mr-1" src="/assets/ArrowLeft.png" alt=""></img>
+          <img className="invert w-4 mr-1" src="/assets/arrow-left.svg" alt="arrow left"></img>
         </div>
         <div
           onClick={() => instanceRef.current.next()}
           className="w-10 h-10 absolute bottom-[7rem] -right-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
         >
-          <img className="invert w-4 ml-1" src="/assets/ArrowRight.png" alt=""></img>
+          <img className="invert w-4 ml-1" src="/assets/arrow-right.svg" alt="arrow left"></img>
         </div>
       </div>
     </>

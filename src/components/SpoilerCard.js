@@ -18,12 +18,12 @@ const SpoilersCard = () => {
                 CUIDADO, AO ROLAR PODE CONTER...
               </h1>
               <CrossTransition />
-              <img className='w-3/4 mb-14' src="/assets/Spoilers.png" alt="spoilers"></img>
+              <img className='w-3/4 mb-14' src="/assets/tittle1.svg" alt="spoilers" />
               <img
                 className="w-8 my-10"
                 src="/assets/ArrowDown.png"
-                alt=""
-              ></img>
+                alt="arrow down"
+              />
               <p className="font-bold text-2xl">VOCÊ JA ESTAVA SABENDO?</p>
             </div>
             <Carroussel />
