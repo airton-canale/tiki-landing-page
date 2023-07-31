@@ -26,11 +26,6 @@
 
  - This application was deployed with Github Pages library 
 
-
- ```bash
-# Running deploy
-$ npm run deploy
-```
 <br>
 
 ## Installation
@@ -41,7 +36,7 @@ $ npm run deploy
 # clone it
 $ git clone git@github.com:airton-canale/tiki-landing-page.git
 
-$ cd interface-tailwind
+$ cd tiki-landing-page
 
 # Install dependencies
 $ npm install
