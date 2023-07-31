@@ -71,4 +71,8 @@ This project was developed using the following technologies:
 
 - Eu optei por fazer uma coisa que fugia do protótipo que foram os "+ em amarelo", fiz uma transição da opacidade e escala para mostrar uma habilidade e ser um pouco diferente.
 
+- Optei também por fazer um deploy da aplicação para mostrar um conhecimento a mais, disponível em: https://tiki-landing-page.canale.dev.
+
+- Os primeiros commits não estão muito organizados pois eu fiz na tarde de sábado e acabei esquecendo de separa-los.
+
 - Para melhorar essa aplicação, creio que pode ser componentizada de uma forma mais eficiente, talvez uma arquitetura de pastas e de assets mais organizadas e principalmente responsividade, que não foi realizado, pois não era pedido nas instruções.
