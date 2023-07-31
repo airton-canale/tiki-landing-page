@@ -21,14 +21,14 @@ const SpoilersCard = () => {
               <img className='w-3/4 mb-14' src="/assets/tittle1.svg" alt="spoilers" />
               <img
                 className="w-8 my-10"
-                src="/assets/ArrowDown.png"
+                src="/assets/arrow-down.png"
                 alt="arrow down"
               />
               <p className="font-bold text-2xl">VOCÊ JA ESTAVA SABENDO?</p>
             </div>
             <Carroussel />
         </Card>
-      </div>
+      </div>png
     </>
   )
 }
