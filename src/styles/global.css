@@ -38,3 +38,11 @@
 .button-shadow {
   box-shadow: 2px 2px 0 #FC2BEE
 }
+
+.keen-slider__slide:hover
+  .share-spoilers{
+    bottom: 0;
+}
+.share-spoilers{
+  transition: bottom .3s;
+}

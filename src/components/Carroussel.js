@@ -91,15 +91,22 @@ const Carroussel = forwardRef((props, ref) => {
         <div ref={sliderRef} className="keen-slider">
           {imagesCarroussel.map((img) => {
             return !img.locked ? (
-              <img
-                className="keen-slider__slide rounded-2xl cursor-pointer"
-                src={img.url}
-                alt="Florianopolis"
-              />
+              <div className="keen-slider__slide rounded-2xl cursor-pointer overflow-hidden">
+                <img src={img.url} alt="Florianopolis" className='w-full' />
+                <div className="absolute w-full right-0 left-0 flex justify-center items-center h-20 opacity-[.9] bg-[#000000] share-spoilers -bottom-full">
+                  <div className='flex items-center gap-3'>
+                    <p className='font-bold'>Espalhe este SPOILER:</p>
+                  <img src='/assets/facebook.svg' alt='Facebook' />
+                  <img src='/assets/linkedin.svg' alt='Linkedin' />
+                  <img src='/assets/whatsapp.svg' alt='WhatsApp' />
+                  <img src='/assets/twitter.svg' alt='Twitter' />
+                  </div>
+                </div>
+              </div>
             ) : (
               <div className="keen-slider__slide bg-[#280031] flex flex-col items-center justify-center rounded-2xl cursor-pointer">
                 <img className="w-10" src="/assets/lock.svg" alt="lock" />
-                <p className='text-2xl bold mt-2'>EM BREVE</p>
+                <p className="text-2xl bold mt-2">EM BREVE</p>
               </div>
             )
           })}
@@ -181,13 +188,21 @@ const Carroussel = forwardRef((props, ref) => {
           onClick={() => instanceRef.current.prev()}
           className="w-10 h-10 absolute bottom-[7rem] -left-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
         >
-          <img className="invert w-4 mr-1" src="/assets/arrow-left.svg" alt="arrow left"></img>
+          <img
+            className="invert w-4 mr-1"
+            src="/assets/arrow-left.svg"
+            alt="arrow left"
+          ></img>
         </div>
         <div
           onClick={() => instanceRef.current.next()}
           className="w-10 h-10 absolute bottom-[7rem] -right-14 bg-white rounded-full flex items-center justify-center cursor-pointer button-shadow"
         >
-          <img className="invert w-4 ml-1" src="/assets/arrow-right.svg" alt="arrow left"></img>
+          <img
+            className="invert w-4 ml-1"
+            src="/assets/arrow-right.svg"
+            alt="arrow left"
+          ></img>
         </div>
       </div>
     </>
