@@ -1,3 +1,4 @@
+import { ToastContainer } from 'react-toastify'
 import Background from './components/Background'
 import CompanyLogo from './components/CompanyLogo'
 import CrossTransition from './components/CrossTransition'
@@ -19,6 +20,7 @@ function App() {
         <CrossTransition />
       </div>
       <FormCard />
+      <ToastContainer />
     </>
   )
 }

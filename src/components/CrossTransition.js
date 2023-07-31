@@ -9,10 +9,10 @@ const PlusSign = ({ idx }) => {
   )
 }
 
-const CrossTransition = () => {
+const CrossTransition = ({horizontal = false}) => {
   return (
     <div>
-      <div className="flex flex-col gap-0">
+      <div className={["flex gap-0", horizontal ? "flex-row" : "flex-col"].filter(Boolean).join(' ')}>
         {[1, 2, 3].map((_, i) => (
           <PlusSign idx={i} />
         ))}

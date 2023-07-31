@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import Card from './Card'
 import RadioInput from './RadioInput'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import CrossTransition from './CrossTransition'
 
 const FormCard = () => {
   const [formData, setFormData] = useState({
@@ -16,10 +19,34 @@ const FormCard = () => {
     }))
   }
 
+  const [isLoading, setIsLoading] = useState(false)
+
   const handleCheck = () => {
-    setChecked((prevChecked) => !prevChecked);
-  };
-  console.log(formData)
+    setChecked((prevChecked) => !prevChecked)
+  }
+
+  const handleSubmit = () => {
+    console.log(formData)
+    const resolveAfter3Sec = new Promise((resolve) => setTimeout(resolve, 3000))
+    setFormData({
+      name: '',
+      email: '',
+    })
+    setChecked(false)
+    setIsLoading(true)
+    toast
+      .promise(resolveAfter3Sec, {
+        pending: 'Carregando...',
+        success: `Obrigado ${formData.name}, seu cadastro com o email ${formData.email} foi realizado com sucesso!`,
+      })
+      .then(() => {
+        setIsLoading(false)
+      })
+  }
+
+  const isNameValid =
+    formData.name.length > 5 && formData.name.trim().includes(' ')
+  const isEmailValid = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(formData.email)
 
   return (
     <div className="w-full flex items-center justify-center">
@@ -32,21 +59,32 @@ const FormCard = () => {
           name="name"
           className="p-4 rounded-3xl bg-[#26093A] border border-white text-sm outline-none focus:border-[#FC2BEE] focus:text-[#FC2BEE] focus:placeholder:text-[#FC2BEE]"
           type={'text'}
-          placeholder={'Nome'}
+          value={formData?.name}
+          placeholder={'Nome Completo'}
         />
         <input
           onChange={handleChange}
           name="email"
           className="p-4 rounded-3xl bg-[#26093A] border border-white text-sm outline-none focus:border-[#FC2BEE] focus:text-[#FC2BEE] focus:placeholder:text-[#FC2BEE]"
           type={'email'}
+          value={formData?.email}
           placeholder={'meuemail@gmail.com'}
         />
-        <label className="w-full text-xs flex items-center gap-1">
-          <RadioInput onClick={handleCheck} checked={checked} /> Declaro que li
-          e aceito a politica de privacidade
+        <label
+          onClick={handleCheck}
+          className="w-full text-xs flex items-center gap-1"
+        >
+          <RadioInput checked={checked} /> Declaro que li e aceito a politica de
+          privacidade
         </label>
-        <button className="bg-white rounded-3xl text-black text-xl font-bold p-3 w-full uppercase button-shadow">
-          Enviar
+        <button
+          onClick={handleSubmit}
+          disabled={(!checked || !isNameValid || !isEmailValid) && !isLoading}
+          className={
+            'bg-white rounded-3xl flex justify-center text-black text-xl font-bold p-3 w-full uppercase button-shadow disabled:bg-slate-400 disabled:shadow-none'
+          }
+        >
+          {!isLoading ? 'Enviar' : <CrossTransition horizontal />}
         </button>
       </Card>
     </div>
